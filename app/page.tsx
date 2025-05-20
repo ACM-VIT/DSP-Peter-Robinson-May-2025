@@ -2,16 +2,16 @@
 
 import type React from "react";
 
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Calendar, Clock, MapPin, ExternalLink, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Separator } from "@/components/ui/separator";
-import { Card, CardContent } from "@/components/ui/card";
+import {Calendar, Clock, MapPin, ExternalLink, Mail} from "lucide-react";
+import {Button} from "@/components/ui/button";
+// import { Input } from "@/components/ui/input";
+// import { Textarea } from "@/components/ui/textarea";
+// import { Label } from "@/components/ui/label";
+import {Separator} from "@/components/ui/separator";
+import {Card, CardContent} from "@/components/ui/card";
 
 export default function Home() {
     // Countdown timer logic
@@ -32,7 +32,7 @@ export default function Home() {
 
             if (difference <= 0) {
                 // Event has started
-                setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+                setTimeLeft({days: 0, hours: 0, minutes: 0, seconds: 0});
                 return;
             }
 
@@ -45,7 +45,7 @@ export default function Home() {
             );
             const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-            setTimeLeft({ days, hours, minutes, seconds });
+            setTimeLeft({days, hours, minutes, seconds});
         };
 
         // Update immediately
@@ -57,36 +57,48 @@ export default function Home() {
     }, []);
 
     // Form handling
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        institution: "",
-        questions: "",
-    });
+    // const [formData, setFormData] = useState({
+    //     name: "",
+    //     email: "",
+    //     institution: "",
+    //     questions: "",
+    // });
+    //
+    // const [isSubmitted, setIsSubmitted] = useState(false);
+    //
+    // const handleChange = (
+    //     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    // ) => {
+    //     const { name, value } = e.target;
+    //     setFormData((prev) => ({ ...prev, [name]: value }));
+    // };
 
-    const [isSubmitted, setIsSubmitted] = useState(false);
+    // const handleSubmit = (e: React.FormEvent) => {
+    //     e.preventDefault();
+    //     // In a real application, you would send this data to your backend
+    //     console.log("Form submitted:", formData);
+    //     setIsSubmitted(true);
+    //     // Reset form
+    //     setFormData({
+    //         name: "",
+    //         email: "",
+    //         institution: "",
+    //         questions: "",
+    //     });
+    // };
 
-    const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-    ) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
+    const googleDateFormat = (date: Date) => {
+        return date.toISOString().replace(/-|:|\.\d\d\d/g, '');
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // In a real application, you would send this data to your backend
-        console.log("Form submitted:", formData);
-        setIsSubmitted(true);
-        // Reset form
-        setFormData({
-            name: "",
-            email: "",
-            institution: "",
-            questions: "",
-        });
-    };
+    const addToCalendar = () => {
+        const title = "Computers Have Feelings Too", startDateTime = new Date("2025-05-21T14:30:00"),
+            endDateTime = new Date("2025-05-21T16:00:00"),
+            description = "Explore how machines can sense, analyze, and express emotions with Dr. Peter Robinson from Cambridge University. This exclusive talk examines the intersection of psychology and technology that's enabling computers to understand human emotions, revolutionizing how we interact with machines and opening new possibilities in education, commerce, therapy, and everyday life."
+        const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${googleDateFormat(startDateTime)}/${googleDateFormat(endDateTime)}&details=${description}&location=${location}&sf=true&output=xml`;
+        window.open(calendarUrl, '_blank');
 
+    }
     return (
         <div className="min-h-screen bg-white">
             {/* Navigation */}
@@ -98,7 +110,7 @@ export default function Home() {
                         className="flex items-center space-x-2"
                     >
                         <Image
-                            src="/acmlogo.svg?height=40&width=40"
+                            src="/logos/black.svg?height=40&width=40"
                             alt="ACM-VIT Logo"
                             width={40}
                             height={40}
@@ -127,9 +139,6 @@ export default function Home() {
                             Details
                         </Link>
                     </nav>
-                    <Button variant="outline" className="md:hidden">
-                        Menu
-                    </Button>
                 </div>
             </header>
 
@@ -146,16 +155,16 @@ export default function Home() {
 
                     {/* Countdown Timer */}
                     <div className="max-w-3xl mx-auto mb-12">
-                        <div className="grid grid-cols-4 gap-4">
-                            <div className="bg-white py-4 px-6 rounded-lg shadow-sm w-fit">
-                                <div className="text-3xl md:text-5xl font-bold text-gray-900">
-                                    {timeLeft.days}
-                                </div>
-                                <div className="text-sm text-gray-500 mt-1">
-                                    Days
-                                </div>
-                            </div>
-                            <div className="bg-white p-4 rounded-lg shadow-sm w-fit">
+                        <div className="flex items-center justify-between md:justify-around mb-6">
+                            {/*<div className="bg-white py-4 px-6 rounded-lg shadow-sm w-24">*/}
+                            {/*    <div className="text-3xl md:text-5xl font-bold text-gray-900">*/}
+                            {/*        {timeLeft.days}*/}
+                            {/*    </div>*/}
+                            {/*    <div className="text-sm text-gray-500 mt-1">*/}
+                            {/*        Days*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
+                            <div className="bg-white p-4 rounded-lg shadow-sm w-24">
                                 <div className="text-3xl md:text-5xl font-bold text-gray-900">
                                     {timeLeft.hours}
                                 </div>
@@ -163,7 +172,7 @@ export default function Home() {
                                     Hours
                                 </div>
                             </div>
-                            <div className="bg-white p-4 rounded-lg shadow-sm w-fit">
+                            <div className="bg-white p-4 rounded-lg shadow-sm w-24">
                                 <div className="text-3xl md:text-5xl font-bold text-gray-900">
                                     {timeLeft.minutes}
                                 </div>
@@ -171,7 +180,7 @@ export default function Home() {
                                     Minutes
                                 </div>
                             </div>
-                            <div className="bg-white p-4 rounded-lg shadow-sm w-fit">
+                            <div className="bg-white p-4 rounded-lg shadow-sm w-24">
                                 <div className="text-3xl md:text-5xl font-bold text-gray-900">
                                     {timeLeft.seconds}
                                 </div>
@@ -179,6 +188,11 @@ export default function Home() {
                                     Seconds
                                 </div>
                             </div>
+                        </div>
+                        <div className="flex items-center justify-around mb-6 flex-wrap">
+                            <Button variant="outline" onClick={addToCalendar} className="border-gray-300 text-gray-700">
+                                Add to Calendar
+                            </Button>
                         </div>
                     </div>
                 </div>
@@ -322,7 +336,7 @@ export default function Home() {
                                         className="inline-flex items-center text-gray-900 hover:text-gray-700"
                                     >
                                         University Profile
-                                        <ExternalLink className="ml-1 h-4 w-4" />
+                                        <ExternalLink className="ml-1 h-4 w-4"/>
                                     </Link>
                                 </div>
                             </div>
@@ -342,7 +356,7 @@ export default function Home() {
                         <div className="grid md:grid-cols-2 gap-8">
                             <div className="bg-gray-50 p-6 rounded-lg">
                                 <div className="flex items-start">
-                                    <Calendar className="h-6 w-6 text-gray-900 mt-1 mr-4 flex-shrink-0" />
+                                    <Calendar className="h-6 w-6 text-gray-900 mt-1 mr-4 flex-shrink-0"/>
                                     <div>
                                         <h3 className="text-lg font-semibold text-gray-900">
                                             Date
@@ -356,7 +370,7 @@ export default function Home() {
 
                             <div className="bg-gray-50 p-6 rounded-lg">
                                 <div className="flex items-start">
-                                    <Clock className="h-6 w-6 text-gray-900 mt-1 mr-4 flex-shrink-0" />
+                                    <Clock className="h-6 w-6 text-gray-900 mt-1 mr-4 flex-shrink-0"/>
                                     <div>
                                         <h3 className="text-lg font-semibold text-gray-900">
                                             Time
@@ -370,7 +384,7 @@ export default function Home() {
 
                             <div className="bg-gray-50 p-6 rounded-lg md:col-span-2">
                                 <div className="flex items-start">
-                                    <MapPin className="h-6 w-6 text-gray-900 mt-1 mr-4 flex-shrink-0" />
+                                    <MapPin className="h-6 w-6 text-gray-900 mt-1 mr-4 flex-shrink-0"/>
                                     <div>
                                         <h3 className="text-lg font-semibold text-gray-900">
                                             Venue
@@ -608,7 +622,7 @@ export default function Home() {
                         <div>
                             <div className="flex items-center space-x-2 mb-4">
                                 <Image
-                                    src="/acmlogowhite.svg?height=40&width=40"
+                                    src="/logos/white.svg?height=40&width=40"
                                     alt="ACM-VIT Logo"
                                     width={40}
                                     height={40}
@@ -659,7 +673,7 @@ export default function Home() {
                             </h3>
                             <ul className="space-y-2">
                                 <li className="flex items-center">
-                                    <Mail className="h-5 w-5 mr-2 text-gray-400" />
+                                    <Mail className="h-5 w-5 mr-2 text-gray-400"/>
                                     <Link
                                         href="mailto:acm@vit.ac.in"
                                         className="text-gray-400 hover:text-white transition-colors"
@@ -668,7 +682,7 @@ export default function Home() {
                                     </Link>
                                 </li>
                                 <li className="flex items-center">
-                                    <MapPin className="h-5 w-5 mr-2 text-gray-400" />
+                                    <MapPin className="h-5 w-5 mr-2 text-gray-400"/>
                                     <span className="text-gray-400">
                                         VIT University, Vellore, Tamil Nadu,
                                         India
@@ -687,7 +701,8 @@ export default function Home() {
                                         fill="currentColor"
                                         viewBox="0 0 24 24"
                                     >
-                                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                                        <path
+                                            d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
                                     </svg>
                                 </Link>
                                 <Link
@@ -719,13 +734,14 @@ export default function Home() {
                                         fill="currentColor"
                                         viewBox="0 0 24 24"
                                     >
-                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                        <path
+                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                                     </svg>
                                 </Link>
                             </div>
                         </div>
                     </div>
-                    <Separator className="my-8 bg-gray-800" />
+                    <Separator className="my-8 bg-gray-800"/>
                     <div className="text-center text-gray-500 text-sm">
                         <p>
                             © {new Date().getFullYear()} ACM-VIT Student
