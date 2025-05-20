@@ -20,6 +20,7 @@ export default function Home() {
         hours: 0,
         minutes: 0,
         seconds: 0,
+        finished: false,
     });
 
     useEffect(() => {
@@ -32,7 +33,7 @@ export default function Home() {
 
             if (difference <= 0) {
                 // Event has started
-                setTimeLeft({days: 0, hours: 0, minutes: 0, seconds: 0});
+                setTimeLeft({days: 0, hours: 0, minutes: 0, seconds: 0, finished: true});
                 return;
             }
 
@@ -45,7 +46,7 @@ export default function Home() {
             );
             const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-            setTimeLeft({days, hours, minutes, seconds});
+            setTimeLeft({days, hours, minutes, seconds, finished: false});
         };
 
         // Update immediately
@@ -154,7 +155,7 @@ export default function Home() {
                     </p>
 
                     {/* Countdown Timer */}
-                    <div className="max-w-3xl mx-auto mb-12">
+                    {!timeLeft.finished ? <div className="max-w-3xl mx-auto mb-12">
                         <div className="flex items-center justify-between md:justify-around mb-6">
                             {/*<div className="bg-white py-4 px-6 rounded-lg shadow-sm w-24">*/}
                             {/*    <div className="text-3xl md:text-5xl font-bold text-gray-900">*/}
@@ -194,7 +195,13 @@ export default function Home() {
                                 Add to Calendar
                             </Button>
                         </div>
+                    </div> : <div className="w-full flex items-center justify-center">
+                        <iframe
+                            src="https://teams.microsoft.com/convene/townhall?eventId=f8529fee-9fe8-452d-8afd-b35bdc18e57a@d4963ce2-af94-4122-95a9-644e8b01624d&sessionId=16dce9b7-14bb-4a90-b9c0-16545cf9de73"
+                            width="1280" height="720" className="border-none self-center text-center"
+                            allowFullScreen allow="autoplay; camera; microphone"></iframe>
                     </div>
+                    }
                 </div>
             </section>
 
