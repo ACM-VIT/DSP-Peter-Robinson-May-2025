@@ -125,19 +125,19 @@ export default function Home() {
                             href="#about"
                             className="text-gray-600 hover:text-gray-900 transition-colors"
                         >
-                            About
+                            About Event
                         </Link>
                         <Link
                             href="#speaker"
                             className="text-gray-600 hover:text-gray-900 transition-colors"
                         >
-                            Speaker
+                            About Speaker
                         </Link>
                         <Link
                             href="#details"
                             className="text-gray-600 hover:text-gray-900 transition-colors"
                         >
-                            Details
+                            Event Details
                         </Link>
                     </nav>
                 </div>
@@ -400,9 +400,14 @@ export default function Home() {
                                             Online conference - Zoom
                                         </p>
                                         <p className="text-gray-600 mt-1">
-                                            Also available via live stream on
-                                            our YouTube channel. Link will be
-                                            shared soon.
+                                            Also available via live stream on our{" "}
+                                            <a
+                                                href="https://www.youtube.com/channel/UCaV36jEoK5SI59ly0Mxa_ZA"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-blue-600 hover:underline font-medium">
+                                                  YouTube channel
+                                            </a>. Link will be shared soon.
                                         </p>
                                     </div>
                                 </div>
