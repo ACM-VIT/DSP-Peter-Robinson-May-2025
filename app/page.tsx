@@ -397,17 +397,7 @@ export default function Home() {
                                             Venue
                                         </h3>
                                         <p className="text-gray-600 mt-1">
-                                            Online conference - Zoom
-                                        </p>
-                                        <p className="text-gray-600 mt-1">
-                                            Also available via live stream on our{" "}
-                                            <a
-                                                href="https://www.youtube.com/channel/UCaV36jEoK5SI59ly0Mxa_ZA"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-blue-600 hover:underline font-medium">
-                                                  YouTube channel
-                                            </a>. Link will be shared soon.
+                                            Online conference
                                         </p>
                                     </div>
                                 </div>
