@@ -65,7 +65,6 @@ export default function Home() {
             description = "Explore how machines can sense, analyze, and express emotions with Dr. Peter Robinson from Cambridge University. This exclusive talk examines the intersection of psychology and technology that's enabling computers to understand human emotions, revolutionizing how we interact with machines and opening new possibilities in education, commerce, therapy, and everyday life."
         const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${googleDateFormat(startDateTime)}/${googleDateFormat(endDateTime)}&details=${description}&location=${location}&sf=true&output=xml`;
         window.open(calendarUrl, '_blank');
-
     }
 
     return (
@@ -121,74 +120,21 @@ export default function Home() {
                         Exploring the fascinating world of Human-Computer
                         Interaction with Dr. Peter Robinson
                     </p>
-
-                    {/* Countdown Timer */}
-                    {!timeLeft.finished ? <div className="max-w-3xl mx-auto mb-12">
-                            <div className="flex items-center justify-between md:justify-around mb-6">
-                                {/*<div className="bg-white py-4 px-6 rounded-lg shadow-sm w-24">*/}
-                                {/*    <div className="text-3xl md:text-5xl font-bold text-gray-900">*/}
-                                {/*        {timeLeft.days}*/}
-                                {/*    </div>*/}
-                                {/*    <div className="text-sm text-gray-500 mt-1">*/}
-                                {/*        Days*/}
-                                {/*    </div>*/}
-                                {/*</div>*/}
-                                <div className="bg-white p-4 rounded-lg shadow-sm w-24">
-                                    <div className="text-3xl md:text-5xl font-bold text-gray-900">
-                                        {timeLeft.hours}
-                                    </div>
-                                    <div className="text-sm text-gray-500 mt-1">
-                                        Hours
-                                    </div>
-                                </div>
-                                <div className="bg-white p-4 rounded-lg shadow-sm w-24">
-                                    <div className="text-3xl md:text-5xl font-bold text-gray-900">
-                                        {timeLeft.minutes}
-                                    </div>
-                                    <div className="text-sm text-gray-500 mt-1">
-                                        Minutes
-                                    </div>
-                                </div>
-                                <div className="bg-white p-4 rounded-lg shadow-sm w-24">
-                                    <div className="text-3xl md:text-5xl font-bold text-gray-900">
-                                        {timeLeft.seconds}
-                                    </div>
-                                    <div className="text-sm text-gray-500 mt-1">
-                                        Seconds
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="flex items-center justify-around mb-6 flex-wrap">
-                                <Button variant="outline" onClick={addToCalendar} className="border-gray-300 text-gray-700">
-                                    Add to Calendar
-                                </Button>
-                            </div>
-                        </div> :
-                        <div className="flex items-center justify-center gap-4 mt-16 flex-wrap">
-                            <Link
-                                href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_Zjc1OWQ2YTQtZmVkYS00ZTJkLWI2OTktYmIwMDlkZjkyZjc0%40thread.v2/0?context=%7b%22Tid%22%3a%22d4963ce2-af94-4122-95a9-644e8b01624d%22%2c%22Oid%22%3a%226367d7d1-17b1-477c-9055-e65a0274e7a0%22%7d"
-                                passHref>
-                                <Button variant="default" >
-                                        <Image src="/teams.png" alt="ms teams" width={720} height={720} className="h-8 w-8"/>
-                                        Join in Teams
-                                </Button>
-                            </Link>
-                            <Dialog>
-                                <DialogTrigger asChild>
-                                    <Button variant="outline" className="border-gray-300 text-gray-700">
-                                        View Stream
-                                    </Button>
-                                </DialogTrigger>
-                                <DialogContent>
-                                    <iframe
-                                        src="https://teams.microsoft.com/convene/townhall?eventId=f8529fee-9fe8-452d-8afd-b35bdc18e57a@d4963ce2-af94-4122-95a9-644e8b01624d&sessionId=16dce9b7-14bb-4a90-b9c0-16545cf9de73"
-                                        width="1280" height="720"
-                                        allowFullScreen className="border-none w-full p-2"
-                                        allow="autoplay; camera; microphone"></iframe>
-                                </DialogContent>
-                            </Dialog>
+                    
+                    <div className="max-w-4xl mx-auto mb-12">
+                        <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+                            <iframe
+                                src="https://www.youtube.com/embed/YEY1P62zAf8"
+                                title="Computers Have Feelings Too - Dr. Peter Robinson"
+                                width="100%"
+                                height="100%"
+                                className="absolute inset-0"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                            ></iframe>
                         </div>
-                    }
+                    </div>
                 </div>
             </section>
 
