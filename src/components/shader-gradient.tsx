@@ -55,7 +55,7 @@ export default function ShaderGradient() {
           uAmplitude: 1,
           uDensity: 1.3,
           uFrequency: 4.5,
-          uSpeed: 0.2,
+          uSpeed: 0.16,
           uStrength: 2,
           uTime: 0,
           wireframe: false
