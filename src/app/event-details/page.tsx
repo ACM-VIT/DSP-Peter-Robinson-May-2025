@@ -5,7 +5,7 @@ import { Calendar, Clock, Navigation } from "lucide-react";
 
 export default function EventDetails() {
   return (
-    <div className="relative w-full max-w-[100vw] min-h-screen overflow-x-hidden no-scrollbar bg-black flex flex-col">
+    <div className="relative w-full max-w-[100vw] min-h-screen overflow-x-hidden no-scrollbar bg-black flex flex-col font-[family-name:var(--font-trap)]">
       {/* Shader Gradient Canvas Background */}
       <ShaderGradient />
 
@@ -48,26 +48,26 @@ export default function EventDetails() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 w-full mb-16 md:w-[85%] mx-auto">
               <div className="flex flex-col justify-center items-start px-6 py-5 rounded-2xl glass-card">
                 <div className="flex items-center gap-3 mb-1.5">
-                  <Calendar className="w-[1.15rem] h-[1.15rem] text-[var(--color-gold)]" strokeWidth={2.5} />
-                  <span className="text-[var(--color-gold)] text-[0.95rem] font-medium tracking-wide">Date</span>
+                  <Calendar className="w-6 h-6 text-[var(--color-gold)]" strokeWidth={2.5} />
+                  <span className="text-[var(--color-gold)] text-lg font-medium tracking-wide">Date</span>
                 </div>
-                <p className="text-white font-medium ml-8 text-[0.95rem]">19 June, 2026</p>
+                <p className="text-white font-medium ml-9 text-xl">19 June, 2026</p>
               </div>
               
               <div className="flex flex-col justify-center items-start px-6 py-5 rounded-2xl glass-card">
                 <div className="flex items-center gap-3 mb-1.5">
-                  <Clock className="w-[1.15rem] h-[1.15rem] text-[var(--color-gold)]" strokeWidth={2.5} />
-                  <span className="text-[var(--color-gold)] text-[0.95rem] font-medium tracking-wide">Time</span>
+                  <Clock className="w-6 h-6 text-[var(--color-gold)]" strokeWidth={2.5} />
+                  <span className="text-[var(--color-gold)] text-lg font-medium tracking-wide">Time</span>
                 </div>
-                <p className="text-white font-medium ml-8 text-[0.95rem]">4:00 PM - 5:00 PM</p>
+                <p className="text-white font-medium ml-9 text-xl">4:00 PM - 5:00 PM</p>
               </div>
 
               <div className="flex flex-col justify-center items-start px-6 py-5 rounded-2xl glass-card">
                 <div className="flex items-center gap-3 mb-1.5">
-                  <Navigation className="w-[1.15rem] h-[1.15rem] text-[var(--color-gold)]" strokeWidth={2.5} />
-                  <span className="text-[var(--color-gold)] text-[0.95rem] font-medium tracking-wide">Venue</span>
+                  <Navigation className="w-6 h-6 text-[var(--color-gold)]" strokeWidth={2.5} />
+                  <span className="text-[var(--color-gold)] text-lg font-medium tracking-wide">Venue</span>
                 </div>
-                <p className="text-white font-medium ml-8 text-[0.95rem]">Online Conference</p>
+                <p className="text-white font-medium ml-9 text-xl">Online Conference</p>
               </div>
             </div>
 
