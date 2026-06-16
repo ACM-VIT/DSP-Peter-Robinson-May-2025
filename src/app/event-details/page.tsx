@@ -1,7 +1,7 @@
 import Navbar from "@/components/navbar";
 import ShaderGradient from "@/components/shader-gradient";
 import Image from "next/image";
-import { Calendar, Clock, Navigation } from "lucide-react";
+import { Calendar, Clock } from "lucide-react";
 
 export default function EventDetails() {
   return (
@@ -64,7 +64,13 @@ export default function EventDetails() {
 
               <div className="flex flex-col justify-center items-start px-6 py-5 rounded-2xl glass-card">
                 <div className="flex items-center gap-3 mb-1.5">
-                  <Navigation className="w-6 h-6 text-[var(--color-gold)]" strokeWidth={2.5} />
+                  <Image
+                    src="/images/venue.svg"
+                    alt="Venue Icon"
+                    width={24}
+                    height={24}
+                    className="w-6 h-6"
+                  />
                   <span className="text-[var(--color-gold)] text-lg font-medium tracking-wide">Venue</span>
                 </div>
                 <p className="text-white font-medium ml-9 text-xl">Online Conference</p>
