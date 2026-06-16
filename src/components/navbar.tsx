@@ -17,19 +17,19 @@ export default function Navbar() {
       </div>
       <div className="flex items-center gap-10">
         <Link
-          href="#event"
+          href="/#event"
           className="text-white/85 text-[0.95rem] no-underline tracking-wide transition-all duration-200 hover:text-[var(--color-gold)] hover:opacity-100"
         >
           event
         </Link>
         <Link
-          href="#speaker"
+          href="/#speaker"
           className="text-white/85 text-[0.95rem] no-underline tracking-wide transition-all duration-200 hover:text-[var(--color-gold)] hover:opacity-100"
         >
           speaker
         </Link>
         <Link
-          href="#event-details"
+          href="/event-details"
           className="text-white/85 text-[0.95rem] no-underline tracking-wide transition-all duration-200 hover:text-[var(--color-gold)] hover:opacity-100"
         >
           event details

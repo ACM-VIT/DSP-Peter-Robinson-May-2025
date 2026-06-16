@@ -7,7 +7,7 @@ export default function HeroSection({
   targetDate,
   meetUrl,
 }: {
-  targetDate: Date;
+  targetDate: Date | string | null | undefined;
   meetUrl: string;
 }) {
   const [isLive, setIsLive] = useState(false);
