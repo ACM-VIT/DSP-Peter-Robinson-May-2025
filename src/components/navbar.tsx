@@ -18,7 +18,7 @@ export default function Navbar() {
       </div>
       <div className="flex items-center gap-5 rounded-full border border-white/12 bg-black/28 px-5 py-2.5 shadow-[0_8px_28px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md md:gap-10 md:px-7 md:py-3">
         <Link
-          href="/"
+          href="/#home"
           className="text-white text-[1.05rem] md:text-[1.22rem] font-semibold no-underline tracking-[0.03em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)] transition-all duration-200 hover:text-[var(--color-gold)] hover:opacity-100"
         >
           home
@@ -30,13 +30,13 @@ export default function Navbar() {
           event
         </Link>
         <Link
-          href="/speaker"
+          href="/#speaker"
           className="text-white text-[1.05rem] md:text-[1.22rem] font-semibold no-underline tracking-[0.03em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)] transition-all duration-200 hover:text-[var(--color-gold)] hover:opacity-100"
         >
           speaker
         </Link>
         <Link
-          href="/event-details"
+          href="/#event-details"
           className="text-white text-[1.05rem] md:text-[1.22rem] font-semibold no-underline tracking-[0.03em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)] transition-all duration-200 hover:text-[var(--color-gold)] hover:opacity-100"
         >
           event details
