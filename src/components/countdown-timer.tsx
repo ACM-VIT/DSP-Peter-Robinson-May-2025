@@ -143,7 +143,6 @@ export default function CountdownTimer({
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(() => getTimeLeft(targetDate));
   const [mounted, setMounted] = useState(initialExpired);
   const [expired, setExpired] = useState(initialExpired);
-  const [showMeet, setShowMeet] = useState(initialExpired);
   const [alreadyExpired] = useState(initialExpired);
 
   useEffect(() => {
@@ -162,7 +161,6 @@ export default function CountdownTimer({
         setExpired(true);
         onExpire?.();
         clearInterval(interval);
-        setTimeout(() => setShowMeet(true), 2000);
       }
     }, 1000);
 
@@ -198,8 +196,8 @@ export default function CountdownTimer({
     <div className="grid" style={{ gridTemplate: '1fr / 1fr' }}>
       {/* Timer — fades out when expired (both children stack in same grid cell) */}
       <div
-        className={`col-start-1 row-start-1 flex items-center justify-center transition-opacity duration-[2000ms] ease-in-out ${
-          expired ? "opacity-0 pointer-events-none" : "opacity-100"
+        className={`col-start-1 row-start-1 flex items-center justify-center ${
+          expired ? "animate-fade-out-up pointer-events-none" : "opacity-100"
         }`}
       >
         <div className="timer-container">
@@ -216,11 +214,13 @@ export default function CountdownTimer({
       </div>
 
       {/* Meet link — fades in after timer fades out */}
-      {showMeet && (
-        <div className="col-start-1 row-start-1 flex items-center justify-center">
-          <MeetLink meetUrl={meetUrl} />
-        </div>
-      )}
+      <div
+        className={`col-start-1 row-start-1 flex items-center justify-center ${
+          expired ? "animate-fade-in-up" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <MeetLink meetUrl={meetUrl} skipAnimation />
+      </div>
     </div>
   );
 }

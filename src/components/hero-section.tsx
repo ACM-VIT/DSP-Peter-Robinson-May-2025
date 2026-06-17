@@ -48,7 +48,7 @@ export default function HeroSection({
       <CountdownTimer
         targetDate={targetDate}
         meetUrl={meetUrl}
-        onExpire={() => setTimeout(() => setIsLive(true), 4000)}
+        onExpire={() => setIsLive(true)}
       />
       <p className="text-[1.05rem] font-light text-white/60 max-w-[750px] leading-[1.7] mt-14 tracking-[0.01em]">
         Dive into the fundamentals of quantum computing with hands-on
