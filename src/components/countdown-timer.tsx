@@ -137,7 +137,6 @@ export default function CountdownTimer({
   meetUrl: string;
   onExpire?: () => void;
 }) {
-  // Compute synchronously so we never flash the placeholder
   const initialExpired = targetDate.getTime() <= Date.now();
 
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(() => getTimeLeft(targetDate));
@@ -183,7 +182,6 @@ export default function CountdownTimer({
     );
   }
 
-  // Already expired on page load — show meet link immediately, no animation
   if (alreadyExpired) {
     return (
       <div className="flex items-center justify-center">
@@ -194,7 +192,6 @@ export default function CountdownTimer({
 
   return (
     <div className="grid" style={{ gridTemplate: '1fr / 1fr' }}>
-      {/* Timer — fades out when expired (both children stack in same grid cell) */}
       <div
         className={`col-start-1 row-start-1 flex items-center justify-center ${
           expired ? "animate-fade-out-up pointer-events-none" : "opacity-100"
@@ -213,7 +210,6 @@ export default function CountdownTimer({
         </div>
       </div>
 
-      {/* Meet link — fades in after timer fades out */}
       <div
         className={`col-start-1 row-start-1 flex items-center justify-center ${
           expired ? "animate-fade-in-up" : "opacity-0 pointer-events-none"

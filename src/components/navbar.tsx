@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const NAV_ITEMS = [
   { label: "Home", id: "home" },
   { label: "Event", id: "event" },
-  { label: "Event Details", id: "event-details" },
+  /* { label: "Event Details", id: "event-details" }, */
   { label: "Qangles", id: "speaker" },
 ];
 
@@ -50,8 +50,6 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[100] flex flex-row items-center justify-between px-3 sm:px-6 md:px-12 py-3 md:py-6 gap-2 md:gap-0 pointer-events-auto">
-      {/* No background for navbar so it doesn't block content */}
-
       <div className="flex-shrink-0">
         <Image
           src="/images/acmvit.svg"

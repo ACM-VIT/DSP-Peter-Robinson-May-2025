@@ -19,7 +19,7 @@ export default function HeroSection({
         
       </h1>
 
-      <h2 className="mb-10 font-[family-name:var(--font-trap)] text-[clamp(2rem,5.5vw,4.5rem)] font-extrabold leading-[1.15] text-[var(--color-gold)]">
+      <h2 className="mb-10 font-[family-name:var(--font-trap)] text-[clamp(1.75rem,4.5vw,3.5rem)] font-extrabold leading-[1.15] text-[var(--color-gold)]">
         Quantum Computing: Shaping the Future of Technology and Engineering by
         2030
         <br />
@@ -57,7 +57,7 @@ export default function HeroSection({
 
       <p className="mt-14 max-w-[750px] text-[1.05rem] font-light leading-[1.7] tracking-[0.01em] text-white/60">
         Dive into the fundamentals of quantum computing with hands-on sessions,
-        expert talks, and collaborative problem solving — brought to you by ACM
+        expert talks, and collaborative problem solving - brought to you by ACM
         VIT Student Chapter.
       </p>
     </main>
