@@ -13,7 +13,6 @@ const tiles = ["Quantum basics", "Modern ecosystem", "Career roadmap"];
 export default function AboutEventSection() {
   return (
     <section
-      id="event"
       className="relative isolate min-h-screen overflow-hidden bg-black px-6 py-20 font-[family-name:var(--font-trap)] text-white md:px-12 lg:px-20"
     >
       <ShaderGradient />
