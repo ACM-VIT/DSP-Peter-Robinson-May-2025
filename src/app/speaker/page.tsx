@@ -1,13 +1,14 @@
 import ShaderGradient from "@/components/shader-gradient";
-import SpeakerSection from "@/components/speaker-section";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
 
 export default function Speaker() {
   return (
     <div className="relative w-screen h-screen overflow-hidden bg-black font-[family-name:var(--font-trap)]">
-      
+      {/* Shader Gradient Canvas Background */}
       <ShaderGradient />
+
+      {/* Atom decorations — same placements as home */}
       <Image
         src="/images/atomfull.svg"
         alt=""
