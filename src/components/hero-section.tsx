@@ -17,10 +17,33 @@ export default function HeroSection({
 
   return (
     <main className="relative z-10 flex flex-1 flex-col items-center justify-center text-center px-8 pt-28 pb-16">
-      <h1 className="font-[family-name:var(--font-trap)] font-extrabold text-[clamp(2.8rem,5.5vw,4.5rem)] text-[var(--color-gold)] leading-[1.15] mb-10 transition-opacity duration-[1500ms]">
+      <h1 className="font-[family-name:var(--font-trap)] font-extrabold text-[clamp(2.8rem,5.5vw,4.5rem)] text-[var(--color-gold)] leading-[1.15] mb-10">
         Quantum Workshop
         <br />
-        {isLive || alreadyExpired ? "is now live at" : "starts in"}
+        {alreadyExpired ? (
+          <span>is now live at</span>
+        ) : (
+          <span className="relative inline-grid grid-cols-1 grid-rows-1 justify-items-center overflow-hidden py-1">
+            <span
+              className={
+                isLive
+                  ? "animate-fade-out-up col-start-1 row-start-1 pointer-events-none"
+                  : "col-start-1 row-start-1 opacity-100 transform-none"
+              }
+            >
+              starts in
+            </span>
+            <span
+              className={
+                isLive
+                  ? "animate-fade-in-up col-start-1 row-start-1"
+                  : "col-start-1 row-start-1 opacity-0 pointer-events-none"
+              }
+            >
+              is now live at
+            </span>
+          </span>
+        )}
       </h1>
       <CountdownTimer
         targetDate={targetDate}
