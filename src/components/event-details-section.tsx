@@ -28,7 +28,7 @@ const scheduleItems = [
 
 export default function EventDetailsSection() {
   return (
-    <div className="relative flex h-screen w-screen flex-col overflow-hidden bg-black font-[family-name:var(--font-trap)]">
+    <div className="relative flex min-h-screen w-full max-w-[100vw] flex-col overflow-x-hidden no-scrollbar bg-black font-[family-name:var(--font-trap)]">
       <ShaderGradient />
 
       <Image
@@ -59,7 +59,7 @@ export default function EventDetailsSection() {
       <div className="relative z-10 flex h-full w-full flex-col pb-8">
         <Navbar />
 
-        <main className="mt-4 flex flex-1 flex-col items-center overflow-hidden px-6 lg:px-20">
+        <main className="mt-4 flex flex-1 flex-col items-center px-6 lg:px-20">
           <div className="w-full max-w-4xl">
             <h1 className="mb-8 text-center font-[family-name:var(--font-trap)] text-3xl font-semibold text-[var(--color-gold)] md:text-[2.5rem]">
               Event Details
