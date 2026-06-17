@@ -17,59 +17,77 @@ export default function Home() {
     <>
       <Loader />
 
-      {/* Home / Hero */}
-      <section
-        id="home"
-        className="relative h-screen w-screen overflow-hidden bg-black"
-      >
+      {/* ─── FIXED BACKGROUND LAYER ─── */}
+      {/* Animated shader gradient background — stays fixed behind everything */}
+      <div className="fixed inset-0 z-0">
         <ShaderGradient />
+      </div>
 
-        <Image
-          src="/images/atomfull.svg"
-          alt=""
-          width={534}
-          height={534}
-          className="absolute z-[5] pointer-events-none opacity-70 bottom-[10%] left-[-7%] w-[400px] h-auto -rotate-12"
-          aria-hidden="true"
-        />
-        <Image
-          src="/images/atomfull.svg"
-          alt=""
-          width={534}
-          height={534}
-          className="absolute z-[5] pointer-events-none opacity-70 top-[6%] right-[3%] w-[170px] h-auto -scale-x-100 rotate-6"
-          aria-hidden="true"
-        />
-        <Image
-          src="/images/atomfull.svg"
-          alt=""
-          width={534}
-          height={534}
-          className="absolute z-[5] pointer-events-none opacity-70 bottom-[3%] right-[0%] w-[280px] h-auto -scale-x-100 -rotate-3"
-          aria-hidden="true"
-        />
+      {/* Dark overlay layers — fixed behind content */}
+      <div className="pointer-events-none fixed inset-0 z-[1] bg-[linear-gradient(115deg,rgba(0,0,0,0.94)_0%,rgba(0,0,0,0.82)_34%,rgba(24,24,24,0.68)_58%,rgba(112,112,112,0.34)_100%)]" />
+      <div className="pointer-events-none fixed inset-0 z-[1] opacity-[0.16] bg-[repeating-linear-gradient(50deg,rgba(255,255,255,0.12)_0px,rgba(255,255,255,0.12)_2px,transparent_2px,transparent_14px)]" />
 
-        <div className="relative z-10 flex h-full w-full flex-col">
-          <Navbar />
+      {/* Decorative atom images — fixed in the background */}
+      <Image
+        src="/images/atomfull.svg"
+        alt=""
+        width={534}
+        height={534}
+        className="pointer-events-none fixed z-[2] h-auto w-[340px] -translate-x-1/2 opacity-80 blur-[0.2px] bottom-[10%] left-[-1%] md:w-[470px] -rotate-12"
+        aria-hidden="true"
+      />
+      <Image
+        src="/images/atomfull.svg"
+        alt=""
+        width={534}
+        height={534}
+        className="pointer-events-none fixed z-[2] h-auto w-[190px] -scale-x-100 rotate-6 opacity-70 top-[6%] right-[3%] md:w-[230px]"
+        aria-hidden="true"
+      />
+      <Image
+        src="/images/atomfull.svg"
+        alt=""
+        width={534}
+        height={534}
+        className="pointer-events-none fixed z-[2] h-auto w-[270px] -scale-x-100 -rotate-3 opacity-75 bottom-[3%] right-[0%] md:w-[330px]"
+        aria-hidden="true"
+      />
+
+      {/* Subtle radial glow — fixed */}
+      <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[2] h-1/3 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.08),transparent_62%)] opacity-50" />
+
+      {/* ─── FIXED NAVBAR ─── */}
+      <Navbar />
+
+      {/* ─── SCROLLABLE CONTENT ─── */}
+      <div className="relative z-10 font-[family-name:var(--font-trap)] text-white h-screen w-full overflow-y-auto overflow-x-hidden snap-y snap-mandatory no-scrollbar">
+        {/* Home / Hero */}
+        <section
+          id="home"
+          className="relative min-h-screen flex flex-col snap-start scroll-mt-0"
+        >
+          {/* Top gradient fade for the hero */}
+          <div className="pointer-events-none absolute inset-x-0 top-0 z-[3] h-32 bg-gradient-to-b from-black via-black/85 to-transparent" />
           <HeroSection targetDate={WORKSHOP_DATE} meetUrl={MEET_URL} />
-        </div>
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-28 bg-gradient-to-b from-transparent via-black/55 to-black" />
-      </section>
+          {/* Bottom gradient transition */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-28 bg-gradient-to-b from-transparent via-black/55 to-black" />
+        </section>
 
-      {/* About the Event */}
-      <section id="event">
-        <AboutEventSection />
-      </section>
+        {/* About the Event */}
+        <section id="event" className="relative min-h-screen snap-start scroll-mt-0">
+          <AboutEventSection />
+        </section>
 
-      {/* Speaker */}
-      <section id="speaker">
-        <SpeakerSection />
-      </section>
+        {/* Speaker */}
+        <section id="speaker" className="relative min-h-screen snap-start scroll-mt-0">
+          <SpeakerSection />
+        </section>
 
-      {/* Event Details */}
-      <section id="event-details">
-        <EventDetailsSection />
-      </section>
+        {/* Event Details */}
+        <section id="event-details" className="relative min-h-screen snap-start scroll-mt-0">
+          <EventDetailsSection />
+        </section>
+      </div>
     </>
   );
 }
