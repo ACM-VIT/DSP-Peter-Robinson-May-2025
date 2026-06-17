@@ -7,17 +7,20 @@ export default function HeroSection({
   targetDate,
   meetUrl,
 }: {
-  targetDate: Date | string | null | undefined;
+  targetDate: Date;
   meetUrl: string;
 }) {
   const [isLive, setIsLive] = useState(false);
+
+  // Check if already expired on mount — set title immediately
+  const alreadyExpired = targetDate.getTime() <= Date.now();
 
   return (
     <main className="relative z-10 flex flex-1 flex-col items-center justify-center text-center px-8 pb-16">
       <h1 className="font-[family-name:var(--font-trap)] font-extrabold text-[clamp(2.8rem,5.5vw,4.5rem)] text-[var(--color-gold)] leading-[1.15] mb-10 transition-opacity duration-[1500ms]">
         Quantum Workshop
         <br />
-        {isLive ? "is now live at" : "starts in"}
+        {isLive || alreadyExpired ? "is now live at" : "starts in"}
       </h1>
       <CountdownTimer
         targetDate={targetDate}

@@ -24,6 +24,12 @@ export default function Navbar() {
           home
         </Link>
         <Link
+          href="/"
+          className="text-white/85 text-[0.95rem] no-underline tracking-wide transition-all duration-200 hover:text-[var(--color-gold)] hover:opacity-100"
+        >
+          home
+        </Link>
+        <Link
           href="/#event"
           className="text-white text-[1.05rem] md:text-[1.22rem] font-semibold no-underline tracking-[0.03em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)] transition-all duration-200 hover:text-[var(--color-gold)] hover:opacity-100"
         >
