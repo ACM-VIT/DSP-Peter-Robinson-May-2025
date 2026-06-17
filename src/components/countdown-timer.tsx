@@ -9,9 +9,16 @@ interface TimeLeft {
   seconds: number;
 }
 
-function getTimeLeft(targetDate: Date): TimeLeft {
+function getTimeLeft(targetDate: Date | string | null | undefined): TimeLeft {
   const now = new Date();
-  const diff = targetDate.getTime() - now.getTime();
+  if (!targetDate) {
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  }
+  const dateObj = typeof targetDate === "string" ? new Date(targetDate) : targetDate;
+  if (isNaN(dateObj.getTime())) {
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  }
+  const diff = dateObj.getTime() - now.getTime();
 
   if (diff <= 0) {
     return { days: 0, hours: 0, minutes: 0, seconds: 0 };
@@ -96,7 +103,7 @@ export default function CountdownTimer({
   meetUrl,
   onExpire,
 }: {
-  targetDate: Date;
+  targetDate: Date | string | null | undefined;
   meetUrl: string;
   onExpire?: () => void;
 }) {
