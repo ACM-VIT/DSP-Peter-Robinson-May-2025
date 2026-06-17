@@ -26,9 +26,9 @@
   --font-aldrich: 'Aldrich', sans-serif;
 
   --animate-spin-slow: spin-slow 2s linear infinite;
-  --animate-float-slow: float-slow 35s ease-in-out infinite;
-  --animate-float-medium: float-medium 25s ease-in-out infinite;
-  --animate-float-fast: float-fast 18s ease-in-out infinite;
+  --animate-float-slow: float-slow 15s ease-in-out infinite;
+  --animate-float-medium: float-medium 10s ease-in-out infinite;
+  --animate-float-fast: float-fast 10s ease-in-out infinite;
   --animate-fade-in-up: fadeInUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   --animate-fade-out-up: fadeOutUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 

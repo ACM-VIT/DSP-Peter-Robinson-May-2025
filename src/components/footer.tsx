@@ -12,7 +12,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-3 mb-4 md:mb-6">
               <Image
-                src="/images/acm-logo.svg"
+                src="/images/acm-logo-white.svg"
                 alt="ACM-VIT Logo"
                 width={40}
                 height={40}
