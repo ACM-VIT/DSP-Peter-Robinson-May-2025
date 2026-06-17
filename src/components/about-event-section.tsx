@@ -50,29 +50,29 @@ export default function AboutEventSection() {
       <div className="relative z-10 flex h-full w-full flex-col pb-8">
         <Navbar />
 
-        <div className="mx-auto flex min-h-[calc(100vh-8rem)] w-full max-w-5xl flex-col justify-center px-6 pb-20 pt-4 md:px-12 lg:px-20">
+        <main className="mx-auto flex min-h-[calc(100vh-8rem)] w-full max-w-5xl flex-col justify-center px-6 pb-20 pt-4 md:px-12 lg:px-20">
           <h2 className="mb-10 text-center text-[1.9rem] font-semibold leading-tight text-[var(--color-gold)] md:mb-12 md:text-[2.25rem]">
-          About the Event
-        </h2>
+            About the Event
+          </h2>
 
-        <div className="mx-auto max-w-[900px] space-y-5 text-[1rem] leading-[1.25] tracking-[0.02em] text-white/90 md:text-[1.08rem]">
-          {paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
+          <div className="mx-auto max-w-[900px] space-y-5 text-[1rem] leading-[1.6] tracking-[0.01em] text-white/85 md:text-[1.05rem]">
+            {paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+          </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-3 md:gap-10">
-          {tiles.map((tile) => (
-            <div
-              key={tile}
-              className="glass-card relative h-[210px] overflow-hidden rounded-[2rem] md:h-[250px]"
-              aria-label={tile}
-            >
-              <span className="sr-only">{tile}</span>
-            </div>
-          ))}
-        </div>
-        </div>
+          <div className="mt-14 grid gap-6 md:grid-cols-3 md:gap-8">
+            {tiles.map((tile) => (
+              <div
+                key={tile}
+                className="glass-card relative h-[210px] overflow-hidden rounded-2xl md:h-[240px]"
+                aria-label={tile}
+              >
+                <span className="sr-only">{tile}</span>
+              </div>
+            ))}
+          </div>
+        </main>
       </div>
     </section>
   );
