@@ -73,11 +73,11 @@ export default function Home() {
       <Navbar />
 
       {/* ─── SCROLLABLE CONTENT ─── */}
-      <div className="relative z-10 font-[family-name:var(--font-trap)] text-white h-screen w-full overflow-y-auto overflow-x-hidden snap-y snap-mandatory no-scrollbar">
+      <div className="relative z-10 font-[family-name:var(--font-trap)] text-white h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth no-scrollbar">
         {/* Home / Hero */}
         <section
           id="home"
-          className="relative min-h-screen flex flex-col snap-start scroll-mt-0"
+          className="relative min-h-screen flex flex-col"
         >
           {/* Top gradient fade for the hero */}
           <div className="pointer-events-none absolute inset-x-0 top-0 z-[3] h-32 bg-gradient-to-b from-black via-black/85 to-transparent" />
@@ -85,17 +85,17 @@ export default function Home() {
         </section>
 
         {/* About the Event */}
-        <section id="event" className="relative min-h-screen snap-start scroll-mt-0">
+        <section id="event" className="relative min-h-screen">
           <AboutEventSection />
         </section>
 
         {/* Speaker */}
-        <section id="speaker" className="relative min-h-screen snap-start scroll-mt-0">
+        <section id="speaker" className="relative min-h-screen">
           <SpeakerSection />
         </section>
 
         {/* Event Details */}
-        <section id="event-details" className="relative min-h-screen snap-start scroll-mt-0">
+        <section id="event-details" className="relative min-h-screen">
           <EventDetailsSection />
         </section>
       </div>
