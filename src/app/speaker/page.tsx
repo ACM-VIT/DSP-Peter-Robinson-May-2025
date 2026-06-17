@@ -57,20 +57,22 @@ export default function Speaker() {
             {/* Speaker info */}
             <div className="flex flex-col text-left">
               <h2 className="font-[family-name:var(--font-trap)] font-bold text-white text-2xl md:text-3xl mb-5">
-                Dr. Something something
+                Qangles
               </h2>
               <p className="text-white/70 text-[0.95rem] leading-relaxed mb-4">
-                Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                vulputate libero et velit interdum, ac aliquet odio mattis.
+                Joining us for this session is an industry expert from Qangles,
+                a pioneering company dedicated to bringing quantum computing 
+                out of the lab and into real-world enterprise applications. 
               </p>
               <p className="text-white/70 text-[0.95rem] leading-relaxed mb-4">
-                Class aptent taciti sociosqu ad litora torquent per conubia
-                nostra, per inceptos himenaeos.
+                Qangles specializes in harmonizing classical and quantum computation, 
+                providing a unified platform where developers, scientists, and enterprises 
+                can build, test, and deploy hybrid quantum solutions.
               </p>
               <p className="text-white/70 text-[0.95rem] leading-relaxed">
-                Curabitur tempus urna at turpis condimentum lobortis. Ut
-                commodo efficitur neque. Ut diam quam, semper iaculis
-                condimentum ac, vestibulum eu nisl
+                Qangles integrates simulation, execution, and optimization workflows to solve bottlenecks, 
+               bridging traditional and quantum infrastructure turns
+               complex barriers into actionable breakthroughs.
               </p>
             </div>
           </div>
