@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Quantum Workshop 2025 — ACM VIT",
+  title: "Quantum Workshop 2026 — ACM VIT",
   description:
     "Join ACM VIT Student Chapter for an immersive quantum computing workshop featuring hands-on sessions, expert talks, and collaborative problem solving.",
 };

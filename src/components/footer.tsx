@@ -6,28 +6,29 @@ import { Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative z-20 mt-16 w-full border-t border-white/10 bg-white/[0.03] backdrop-blur-2xl pt-12 pb-6 font-[family-name:var(--font-trap)]">
+    <footer className="relative z-20 mt-8 md:mt-16 w-full border-t border-white/10 bg-white/[0.03] backdrop-blur-2xl pt-8 md:pt-12 pb-4 md:pb-6 font-[family-name:var(--font-trap)]">
       <div className="container mx-auto px-6 md:px-12 max-w-6xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           <div>
-            <div className="flex items-center space-x-3 mb-6">
+            <div className="flex items-center space-x-3 mb-4 md:mb-6">
               <Image
                 src="/images/acm-logo.svg"
                 alt="ACM-VIT Logo"
-                width={48}
-                height={48}
+                width={40}
+                height={40}
+                className="md:w-[48px] md:h-[48px]"
               />
-              <span className="font-extrabold text-2xl tracking-wide text-white">ACM-VIT</span>
+              <span className="font-extrabold text-xl md:text-2xl tracking-wide text-white">ACM-VIT</span>
             </div>
-            <p className="text-white/60 font-light leading-[1.7] pr-8 text-[0.95rem]">
+            <p className="text-white/60 font-light leading-[1.7] pr-8 text-[0.85rem] md:text-[0.95rem]">
               ACM-VIT is a student chapter of the Association for Computing
               Machinery at VIT University, dedicated to fostering knowledge and
               innovation in the field of computer science.
             </p>
           </div>
           <div>
-            <h3 className="text-[1.2rem] font-semibold mb-6 text-[var(--color-gold)]">Quick Links</h3>
-            <ul className="space-y-4 font-light text-[0.95rem]">
+            <h3 className="text-[1.1rem] md:text-[1.2rem] font-semibold mb-4 md:mb-6 text-[var(--color-gold)]">Quick Links</h3>
+            <ul className="space-y-2 md:space-y-4 font-light text-[0.85rem] md:text-[0.95rem]">
               <li>
                 <Link
                   href="#event"
@@ -44,23 +45,13 @@ export default function Footer() {
                   Speaker Profile
                 </Link>
               </li>
-              {/* 
-              <li>
-                <Link
-                  href="#event-details"
-                  className="text-white/70 hover:text-white transition-colors"
-                >
-                  Event Details
-                </Link>
-              </li>
-              */}
             </ul>
           </div>
           <div>
-            <h3 className="text-[1.2rem] font-semibold mb-6 text-[var(--color-gold)]">Contact Us</h3>
-            <ul className="space-y-4 font-light text-[0.95rem]">
+            <h3 className="text-[1.1rem] md:text-[1.2rem] font-semibold mb-4 md:mb-6 text-[var(--color-gold)]">Contact Us</h3>
+            <ul className="space-y-2 md:space-y-4 font-light text-[0.85rem] md:text-[0.95rem]">
               <li className="flex items-center">
-                <Mail className="h-5 w-5 mr-3 text-[var(--color-gold)]" />
+                <Mail className="h-4 w-4 md:h-5 md:w-5 mr-3 text-[var(--color-gold)]" />
                 <Link
                   href="mailto:acm@vit.ac.in"
                   className="text-white/70 hover:text-white transition-colors"
@@ -69,13 +60,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 mr-3 text-[var(--color-gold)] flex-shrink-0 mt-0.5" />
+                <MapPin className="h-4 w-4 md:h-5 md:w-5 mr-3 text-[var(--color-gold)] flex-shrink-0 mt-0.5" />
                 <span className="text-white/70 leading-[1.6]">
                   VIT University, Vellore, Tamil Nadu, India
                 </span>
               </li>
             </ul>
-            <div className="mt-8 flex space-x-6">
+            <div className="mt-6 md:mt-8 flex space-x-6">
               <Link
                 href="https://x.com/ACM_VIT"
                 className="text-white/70 hover:text-white transition-colors"
@@ -109,8 +100,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-10 mb-6 h-px w-full bg-white/10" />
-        <div className="text-center text-white/40 text-[0.85rem] font-light">
+        <div className="mt-6 md:mt-10 mb-4 md:mb-6 h-px w-full bg-white/10" />
+        <div className="text-center text-white/40 text-[0.8rem] md:text-[0.85rem] font-light">
           <p>
             &copy; {new Date().getFullYear()} ACM-VIT Student Chapter. All
             rights reserved.
