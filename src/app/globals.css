@@ -24,6 +24,28 @@
   --font-mono: var(--font-geist-mono);
   --font-trap: 'Trap', Arial, Helvetica, sans-serif;
   --font-aldrich: 'Aldrich', sans-serif;
+
+  --animate-spin-slow: spin-slow 2s linear infinite;
+  --animate-float-slow: float-slow 35s ease-in-out infinite;
+  --animate-float-medium: float-medium 25s ease-in-out infinite;
+  --animate-float-fast: float-fast 18s ease-in-out infinite;
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(10deg); }
+  }
+  @keyframes float-medium {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(-10deg); }
+  }
+  @keyframes float-fast {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(8deg); }
+  }
 }
 
 :root {
@@ -48,14 +70,7 @@ body {
   overflow-y: auto;
 }
 
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 
-.animate-spin-slow {
-  animation: spin-slow 2s linear infinite;
-}
 
 /* Glassmorphism timer card */
 .timer-digit-card {
@@ -131,45 +146,7 @@ body {
   to { opacity: 1; }
 }
 
-/* Custom floating animations for decorative atoms */
-@keyframes float-slow {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-15px) rotate(10deg);
-  }
-}
 
-@keyframes float-medium {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-10px) rotate(-10deg);
-  }
-}
-
-@keyframes float-fast {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(8deg);
-  }
-}
-
-.animate-float-slow {
-  animation: float-slow 35s ease-in-out infinite;
-}
-
-.animate-float-medium {
-  animation: float-medium 25s ease-in-out infinite;
-}
-
-.animate-float-fast {
-  animation: float-fast 18s ease-in-out infinite;
-}
 
 /* Premium Glassmorphism Hover Effects */
 .glass-card {
