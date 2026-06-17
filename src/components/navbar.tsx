@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 const NAV_ITEMS = [
   { label: "Home", id: "home" },
   { label: "Event", id: "event" },
-  { label: "Speaker", id: "speaker" },
   { label: "Event Details", id: "event-details" },
+  { label: "Qangles", id: "speaker" },
 ];
 
 export default function Navbar() {

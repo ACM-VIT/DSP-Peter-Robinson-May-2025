@@ -6,6 +6,7 @@ import HeroSection from "@/components/hero-section";
 import AboutEventSection from "@/components/about-event-section";
 import EventDetailsSection from "@/components/event-details-section";
 import SpeakerSection from "@/components/speaker-section";
+import LogosSection from "@/components/logos-section";
 import Loader from "@/components/loader";
 import Image from "next/image";
 
@@ -97,6 +98,16 @@ export default function Home() {
         {/* Event Details */}
         <section id="event-details" className="relative min-h-screen">
           <EventDetailsSection />
+        </section>
+
+        {/* Qangles */}
+        <section id="speaker" className="relative min-h-screen snap-start scroll-mt-0">
+          <SpeakerSection />
+        </section>
+
+        {/* Partner Logos */}
+        <section id="logos" className="relative min-h-screen snap-start scroll-mt-0">
+          <LogosSection />
         </section>
       </div>
     </>
