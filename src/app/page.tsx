@@ -30,7 +30,7 @@ export default function Home() {
       <div className="pointer-events-none fixed inset-0 z-[1] opacity-[0.16] bg-[repeating-linear-gradient(50deg,rgba(255,255,255,0.12)_0px,rgba(255,255,255,0.12)_2px,transparent_2px,transparent_14px)]" />
 
       {/* Decorative atom images — fixed in the background, with premium float/rotate animations */}
-      <div className="pointer-events-none fixed z-[2] h-auto w-[340px] -translate-x-1/2 opacity-80 blur-[0.2px] bottom-[10%] left-[-1%] md:w-[470px] -rotate-12">
+      <div className="hidden md:block pointer-events-none fixed z-[2] h-auto w-[340px] -translate-x-1/2 opacity-80 blur-[0.2px] bottom-[10%] left-[-1%] md:w-[470px] -rotate-12">
         <div className="animate-float-slow">
           <Image
             src="/images/atomfull.svg"
@@ -54,7 +54,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="pointer-events-none fixed z-[2] h-auto w-[270px] -scale-x-100 -rotate-3 opacity-75 bottom-[3%] right-[0%] md:w-[330px]">
+      <div className="hidden md:block pointer-events-none fixed z-[2] h-auto w-[270px] -scale-x-100 -rotate-3 opacity-75 bottom-[3%] right-[0%] md:w-[330px]">
         <div className="animate-float-fast">
           <Image
             src="/images/atomfull.svg"
@@ -74,29 +74,22 @@ export default function Home() {
       <Navbar />
 
       {/* ─── SCROLLABLE CONTENT ─── */}
-      <div className="relative z-10 font-[family-name:var(--font-trap)] text-white h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth no-scrollbar">
+      <div className="relative z-10 font-[family-name:var(--font-trap)] text-white h-screen w-full overflow-y-auto overflow-x-hidden scroll-smooth snap-y snap-mandatory no-scrollbar">
         {/* Home / Hero */}
         <section
           id="home"
-          className="relative min-h-screen flex flex-col"
+          className="relative min-h-screen flex flex-col snap-start scroll-mt-0"
         >
-          {/* Top gradient fade for the hero */}
-          <div className="pointer-events-none absolute inset-x-0 top-0 z-[3] h-32 bg-gradient-to-b from-black via-black/85 to-transparent" />
           <HeroSection targetDate={WORKSHOP_DATE} meetUrl={MEET_URL} />
         </section>
 
         {/* About the Event */}
-        <section id="event" className="relative min-h-screen">
+        <section id="event" className="relative min-h-screen snap-start scroll-mt-0">
           <AboutEventSection />
         </section>
 
-        {/* Speaker */}
-        <section id="speaker" className="relative min-h-screen">
-          <SpeakerSection />
-        </section>
-
         {/* Event Details */}
-        <section id="event-details" className="relative min-h-screen">
+        <section id="event-details" className="relative min-h-screen snap-start scroll-mt-0">
           <EventDetailsSection />
         </section>
 

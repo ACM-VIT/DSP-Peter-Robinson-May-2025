@@ -49,7 +49,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[100] flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-5 md:py-6 gap-4 md:gap-0 pointer-events-auto">
+    <nav className="fixed top-0 left-0 right-0 z-[100] flex flex-row items-center justify-between px-3 sm:px-6 md:px-12 py-3 md:py-6 gap-2 md:gap-0 pointer-events-auto">
       {/* No background for navbar so it doesn't block content */}
 
       <div className="flex-shrink-0">
@@ -59,10 +59,10 @@ export default function Navbar() {
           width={160}
           height={57}
           priority
-          className="w-[145px] md:w-[190px] h-auto"
+          className="w-[80px] sm:w-[110px] md:w-[190px] h-auto"
         />
       </div>
-      <div className="flex items-center gap-5 rounded-full border border-white/12 bg-black/28 px-5 py-2.5 shadow-[0_8px_28px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md md:gap-10 md:px-7 md:py-3">
+      <div className="flex items-center gap-2 sm:gap-5 md:gap-10 rounded-full border border-white/12 bg-black/28 px-3 sm:px-5 md:px-7 py-2 md:py-3 shadow-[0_8px_28px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md">
         {NAV_ITEMS.map((item) => {
           const isActive = activeTab === item.id;
           return (
@@ -70,7 +70,7 @@ export default function Navbar() {
               key={item.id}
               href={`#${item.id}`}
               onClick={(e) => handleClick(e, item.id)}
-              className={`text-[1.05rem] md:text-[1.22rem] font-semibold no-underline tracking-[0.03em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)] transition-all duration-200 ${
+              className={`whitespace-nowrap text-[0.7rem] sm:text-[1.05rem] md:text-[1.22rem] font-semibold no-underline tracking-[0.03em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)] transition-all duration-200 ${
                 isActive
                   ? "text-[var(--color-gold)] opacity-100"
                   : "text-white hover:text-[var(--color-gold)] hover:opacity-100"

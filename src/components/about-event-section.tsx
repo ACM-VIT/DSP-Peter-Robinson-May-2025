@@ -9,11 +9,11 @@ export default function AboutEventSection() {
   return (
     <div className="relative z-10 flex w-full flex-col pb-8">
       <main className="mx-auto flex min-h-screen w-full max-w-5xl flex-col justify-center px-6 pt-24 pb-12 md:px-12 lg:px-20">
-        <h2 className="mb-6 text-center text-[1.9rem] font-semibold leading-tight text-[var(--color-gold)] md:mb-10 md:text-[2.25rem]">
+        <h2 className="mb-6 text-center text-[1.6rem] md:text-[2.25rem] font-semibold leading-tight text-[var(--color-gold)] md:mb-10">
           About the Event
         </h2>
 
-        <div className="mx-auto max-w-[900px] space-y-4 text-[1rem] leading-[1.6] tracking-[0.01em] text-white/85 md:text-[1.05rem]">
+        <div className="mx-auto max-w-[900px] space-y-2 text-[0.85rem] leading-[1.5] tracking-[0.01em] text-white/85 md:space-y-4 md:text-[1.05rem] md:leading-[1.6]">
           {paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
