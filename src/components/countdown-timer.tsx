@@ -10,16 +10,9 @@ interface TimeLeft {
   seconds: number;
 }
 
-function getTimeLeft(targetDate: Date | string | null | undefined): TimeLeft {
+function getTimeLeft(targetDate: Date): TimeLeft {
   const now = new Date();
-  if (!targetDate) {
-    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-  }
-  const dateObj = typeof targetDate === "string" ? new Date(targetDate) : targetDate;
-  if (isNaN(dateObj.getTime())) {
-    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-  }
-  const diff = dateObj.getTime() - now.getTime();
+  const diff = targetDate.getTime() - now.getTime();
 
   if (diff <= 0) {
     return { days: 0, hours: 0, minutes: 0, seconds: 0 };
@@ -111,7 +104,8 @@ function MeetLink({ meetUrl, skipAnimation = false }: { meetUrl: string; skipAni
     <div
       className={skipAnimation ? "" : "animate-[fadeIn_2s_ease_forwards] opacity-0"}
       style={skipAnimation ? undefined : { animationFillMode: 'forwards' }}
-    >      <div className="timer-container">
+    >
+      <div className="timer-container">
         <a
           href={meetUrl}
           target="_blank"
@@ -139,7 +133,7 @@ export default function CountdownTimer({
   meetUrl,
   onExpire,
 }: {
-  targetDate: Date | string | null | undefined;
+  targetDate: Date;
   meetUrl: string;
   onExpire?: () => void;
 }) {

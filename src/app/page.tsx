@@ -3,9 +3,9 @@ import Navbar from "@/components/navbar";
 import HeroSection from "@/components/hero-section";
 import Image from "next/image";
 
-// Read from environment variables (set in .env) with safe fallbacks
-const WORKSHOP_DATE = new Date(process.env.NEXT_PUBLIC_WORKSHOP_DATE || "2026-07-15T10:00:00");
-const MEET_URL = process.env.NEXT_PUBLIC_MEET_URL || "https://meet.google.com/xxx-yyyy-zzz";
+// Read from environment variables (set in .env)
+const WORKSHOP_DATE = new Date(process.env.NEXT_PUBLIC_WORKSHOP_DATE!);
+const MEET_URL = process.env.NEXT_PUBLIC_MEET_URL!;
 
 export default function Home() {
   return (

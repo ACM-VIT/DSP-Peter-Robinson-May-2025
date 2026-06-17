@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import CountdownTimer from "./countdown-timer";
 
 export default function HeroSection({
   targetDate,
   meetUrl,
 }: {
-  targetDate: Date | string | null | undefined;
+  targetDate: Date;
   meetUrl: string;
 }) {
   const [isLive, setIsLive] = useState(false);
