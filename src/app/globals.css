@@ -24,6 +24,50 @@
   --font-mono: var(--font-geist-mono);
   --font-trap: 'Trap', Arial, Helvetica, sans-serif;
   --font-aldrich: 'Aldrich', sans-serif;
+
+  --animate-spin-slow: spin-slow 2s linear infinite;
+  --animate-float-slow: float-slow 35s ease-in-out infinite;
+  --animate-float-medium: float-medium 25s ease-in-out infinite;
+  --animate-float-fast: float-fast 18s ease-in-out infinite;
+  --animate-fade-in-up: fadeInUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-out-up: fadeOutUp 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(10deg); }
+  }
+  @keyframes float-medium {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(-10deg); }
+  }
+  @keyframes float-fast {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(8deg); }
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fadeOutUp {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-24px);
+    }
+  }
 }
 
 :root {
@@ -48,14 +92,7 @@ body {
   overflow-y: auto;
 }
 
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 
-.animate-spin-slow {
-  animation: spin-slow 2s linear infinite;
-}
 
 /* Glassmorphism timer card */
 .timer-digit-card {
@@ -130,3 +167,22 @@ body {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+
+
+/* Premium Glassmorphism Hover Effects */
+.glass-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.04) 100%);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(243, 197, 58, 0.15),
+    inset 0 1px 2px rgba(255, 255, 255, 0.25);
+}
+
+
