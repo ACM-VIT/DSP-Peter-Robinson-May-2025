@@ -18,7 +18,7 @@ const logos = [
 export default function LogosSection() {
   return (
     <div className="relative z-10 flex w-full flex-col pb-8">
-      <main className="mx-auto flex min-h-screen w-full max-w-5xl flex-col items-center justify-center px-6 pt-24 pb-12 md:px-12 lg:px-20">
+      <main className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center px-6 pt-24 pb-12 md:px-12 lg:px-20">
         <div className="grid w-full grid-cols-1 items-center justify-items-center gap-8 md:grid-cols-2 md:gap-12">
           {logos.map((logo) => (
             <Image

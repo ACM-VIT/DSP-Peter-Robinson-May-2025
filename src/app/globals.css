@@ -94,7 +94,6 @@ body {
 
 
 
-/* Glassmorphism timer card */
 .timer-digit-card {
   display: flex;
   align-items: center;
@@ -111,7 +110,6 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
-/* Timer outer glassmorphism container */
 .timer-container {
   display: inline-flex;
   align-items: center;
@@ -130,7 +128,6 @@ body {
     inset 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Event details glass card */
 .glass-card {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.01) 100%);
   backdrop-filter: blur(40px);
@@ -145,7 +142,6 @@ body {
     inset 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Hide scrollbar utility */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -154,7 +150,6 @@ body {
   scrollbar-width: none;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .timer-digit-card {
     width: auto;
@@ -185,7 +180,6 @@ body {
 
 
 
-/* Premium Glassmorphism Hover Effects */
 .glass-card {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
