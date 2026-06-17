@@ -4,7 +4,7 @@ import ShaderGradient from "./shader-gradient";
 
 export default function SpeakerSection() {
   return (
-    <div className="relative h-screen w-screen overflow-hidden bg-black font-[family-name:var(--font-trap)]">
+    <div className="relative min-h-screen w-full max-w-[100vw] overflow-x-hidden no-scrollbar bg-black font-[family-name:var(--font-trap)]">
       <ShaderGradient />
 
       <Image
