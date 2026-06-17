@@ -69,8 +69,6 @@ export default function Home() {
           {/* Top gradient fade for the hero */}
           <div className="pointer-events-none absolute inset-x-0 top-0 z-[3] h-32 bg-gradient-to-b from-black via-black/85 to-transparent" />
           <HeroSection targetDate={WORKSHOP_DATE} meetUrl={MEET_URL} />
-          {/* Bottom gradient transition */}
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-28 bg-gradient-to-b from-transparent via-black/55 to-black" />
         </section>
 
         {/* About the Event */}

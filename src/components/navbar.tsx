@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const NAV_ITEMS = [
   { label: "Home", id: "home" },
@@ -10,11 +11,40 @@ const NAV_ITEMS = [
 ];
 
 export default function Navbar() {
+  const [activeTab, setActiveTab] = useState("home");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveTab(entry.target.id);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5,
+      }
+    );
+
+    NAV_ITEMS.forEach((item) => {
+      const el = document.getElementById(item.id);
+      if (el) {
+        observer.observe(el);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
+      setActiveTab(id);
     }
   };
 
@@ -33,16 +63,23 @@ export default function Navbar() {
         />
       </div>
       <div className="flex items-center gap-5 rounded-full border border-white/12 bg-black/28 px-5 py-2.5 shadow-[0_8px_28px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md md:gap-10 md:px-7 md:py-3">
-        {NAV_ITEMS.map((item) => (
-          <a
-            key={item.id}
-            href={`#${item.id}`}
-            onClick={(e) => handleClick(e, item.id)}
-            className="text-white text-[1.05rem] md:text-[1.22rem] font-semibold no-underline tracking-[0.03em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)] transition-all duration-200 hover:text-[var(--color-gold)] hover:opacity-100"
-          >
-            {item.label}
-          </a>
-        ))}
+        {NAV_ITEMS.map((item) => {
+          const isActive = activeTab === item.id;
+          return (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={(e) => handleClick(e, item.id)}
+              className={`text-[1.05rem] md:text-[1.22rem] font-semibold no-underline tracking-[0.03em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)] transition-all duration-200 ${
+                isActive
+                  ? "text-[var(--color-gold)] opacity-100"
+                  : "text-white hover:text-[var(--color-gold)] hover:opacity-100"
+              }`}
+            >
+              {item.label}
+            </a>
+          );
+        })}
       </div>
     </nav>
   );
