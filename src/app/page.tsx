@@ -9,6 +9,7 @@ import SpeakerSection from "@/components/speaker-section";
 import Loader from "@/components/loader";
 import Image from "next/image";
 
+// Read from environment variables (set in .env)
 const WORKSHOP_DATE = new Date(process.env.NEXT_PUBLIC_WORKSHOP_DATE!);
 const MEET_URL = process.env.NEXT_PUBLIC_MEET_URL!;
 
@@ -27,31 +28,43 @@ export default function Home() {
       <div className="pointer-events-none fixed inset-0 z-[1] bg-[linear-gradient(115deg,rgba(0,0,0,0.94)_0%,rgba(0,0,0,0.82)_34%,rgba(24,24,24,0.68)_58%,rgba(112,112,112,0.34)_100%)]" />
       <div className="pointer-events-none fixed inset-0 z-[1] opacity-[0.16] bg-[repeating-linear-gradient(50deg,rgba(255,255,255,0.12)_0px,rgba(255,255,255,0.12)_2px,transparent_2px,transparent_14px)]" />
 
-      {/* Decorative atom images — fixed in the background */}
-      <Image
-        src="/images/atomfull.svg"
-        alt=""
-        width={534}
-        height={534}
-        className="pointer-events-none fixed z-[2] h-auto w-[340px] -translate-x-1/2 opacity-80 blur-[0.2px] bottom-[10%] left-[-1%] md:w-[470px] -rotate-12"
-        aria-hidden="true"
-      />
-      <Image
-        src="/images/atomfull.svg"
-        alt=""
-        width={534}
-        height={534}
-        className="pointer-events-none fixed z-[2] h-auto w-[190px] -scale-x-100 rotate-6 opacity-70 top-[6%] right-[3%] md:w-[230px]"
-        aria-hidden="true"
-      />
-      <Image
-        src="/images/atomfull.svg"
-        alt=""
-        width={534}
-        height={534}
-        className="pointer-events-none fixed z-[2] h-auto w-[270px] -scale-x-100 -rotate-3 opacity-75 bottom-[3%] right-[0%] md:w-[330px]"
-        aria-hidden="true"
-      />
+      {/* Decorative atom images — fixed in the background, with premium float/rotate animations */}
+      <div className="pointer-events-none fixed z-[2] h-auto w-[340px] -translate-x-1/2 opacity-80 blur-[0.2px] bottom-[10%] left-[-1%] md:w-[470px] -rotate-12">
+        <div className="animate-float-slow">
+          <Image
+            src="/images/atomfull.svg"
+            alt=""
+            width={534}
+            height={534}
+            className="w-full h-auto"
+            aria-hidden="true"
+          />
+        </div>
+      </div>
+      <div className="pointer-events-none fixed z-[2] h-auto w-[190px] -scale-x-100 rotate-6 opacity-70 top-[6%] right-[3%] md:w-[230px]">
+        <div className="animate-float-medium">
+          <Image
+            src="/images/atomfull.svg"
+            alt=""
+            width={534}
+            height={534}
+            className="w-full h-auto"
+            aria-hidden="true"
+          />
+        </div>
+      </div>
+      <div className="pointer-events-none fixed z-[2] h-auto w-[270px] -scale-x-100 -rotate-3 opacity-75 bottom-[3%] right-[0%] md:w-[330px]">
+        <div className="animate-float-fast">
+          <Image
+            src="/images/atomfull.svg"
+            alt=""
+            width={534}
+            height={534}
+            className="w-full h-auto"
+            aria-hidden="true"
+          />
+        </div>
+      </div>
 
       {/* Subtle radial glow — fixed */}
       <div className="pointer-events-none fixed inset-x-0 bottom-0 z-[2] h-1/3 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.08),transparent_62%)] opacity-50" />

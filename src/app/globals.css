@@ -130,3 +130,59 @@ body {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* Custom floating animations for decorative atoms */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(10deg);
+  }
+}
+
+@keyframes float-medium {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-10deg);
+  }
+}
+
+@keyframes float-fast {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(8deg);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 35s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 25s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 18s ease-in-out infinite;
+}
+
+/* Premium Glassmorphism Hover Effects */
+.glass-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.04) 100%);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(243, 197, 58, 0.15),
+    inset 0 1px 2px rgba(255, 255, 255, 0.25);
+}
+

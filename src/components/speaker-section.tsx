@@ -12,7 +12,7 @@ export default function SpeakerSection() {
           <div className="relative h-[112px] w-[112px] flex-shrink-0 md:h-[120px] md:w-[120px]">
             <Image
               src="/images/speaker-logo-removebg-preview.png"
-              alt="Qangles"
+              alt="Qangles Logo"
               fill
               priority
               className="object-contain"
