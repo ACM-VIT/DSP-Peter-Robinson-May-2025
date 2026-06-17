@@ -1,11 +1,57 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { useEffect, useState } from "react";
+
+const NAV_ITEMS = [
+  { label: "Home", id: "home" },
+  { label: "Event", id: "event" },
+  { label: "Speaker", id: "speaker" },
+  { label: "Event Details", id: "event-details" },
+];
 
 export default function Navbar() {
+  const [activeTab, setActiveTab] = useState("home");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveTab(entry.target.id);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5,
+      }
+    );
+
+    NAV_ITEMS.forEach((item) => {
+      const el = document.getElementById(item.id);
+      if (el) {
+        observer.observe(el);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      setActiveTab(id);
+    }
+  };
+
   return (
-    <nav className="sticky top-0 z-50 flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-6 md:py-7 gap-5 md:gap-0">
+    <nav className="fixed top-0 left-0 right-0 z-[100] flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-5 md:py-6 gap-4 md:gap-0 pointer-events-auto">
+      {/* No background for navbar so it doesn't block content */}
+
       <div className="flex-shrink-0">
         <Image
           src="/images/acmvit.svg"
@@ -17,30 +63,23 @@ export default function Navbar() {
         />
       </div>
       <div className="flex items-center gap-5 rounded-full border border-white/12 bg-black/28 px-5 py-2.5 shadow-[0_8px_28px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md md:gap-10 md:px-7 md:py-3">
-        <Link
-          href="/#home"
-          className="text-white text-[1.05rem] md:text-[1.22rem] font-semibold no-underline tracking-[0.03em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)] transition-all duration-200 hover:text-[var(--color-gold)] hover:opacity-100"
-        >
-          Home
-        </Link>
-        <Link
-          href="/#event"
-          className="text-white text-[1.05rem] md:text-[1.22rem] font-semibold no-underline tracking-[0.03em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)] transition-all duration-200 hover:text-[var(--color-gold)] hover:opacity-100"
-        >
-          Event
-        </Link>
-        <Link
-          href="/#speaker"
-          className="text-white text-[1.05rem] md:text-[1.22rem] font-semibold no-underline tracking-[0.03em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)] transition-all duration-200 hover:text-[var(--color-gold)] hover:opacity-100"
-        >
-          Speaker
-        </Link>
-        <Link
-          href="/#event-details"
-          className="text-white text-[1.05rem] md:text-[1.22rem] font-semibold no-underline tracking-[0.03em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)] transition-all duration-200 hover:text-[var(--color-gold)] hover:opacity-100"
-        >
-          Event Details
-        </Link>
+        {NAV_ITEMS.map((item) => {
+          const isActive = activeTab === item.id;
+          return (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={(e) => handleClick(e, item.id)}
+              className={`text-[1.05rem] md:text-[1.22rem] font-semibold no-underline tracking-[0.03em] drop-shadow-[0_2px_10px_rgba(0,0,0,0.75)] transition-all duration-200 ${
+                isActive
+                  ? "text-[var(--color-gold)] opacity-100"
+                  : "text-white hover:text-[var(--color-gold)] hover:opacity-100"
+              }`}
+            >
+              {item.label}
+            </a>
+          );
+        })}
       </div>
     </nav>
   );
