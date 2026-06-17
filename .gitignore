@@ -63,3 +63,10 @@ next-env.d.ts
 Desktop.ini
 .Spotlight-V100
 .Trashes
+
+# local caches and log files
+.eslintcache
+*.log
+.npm
+.yarn-integrity
+.cache/
