@@ -15,11 +15,11 @@ export default function HeroSection({
 
   return (
     <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-8 pt-28 pb-16 text-center">
-      <h1 className="mx-auto mb-6 max-w-[1100px] font-[family-name:var(--font-trap)] text-[clamp(1.75rem,3.8vw,3.25rem)] font-extrabold leading-[1.2] text-[var(--color-gold)] transition-opacity duration-[1500ms]">
+      <h1 className="mx-auto mb-6 max-w-[1100px] font-[family-name:var(--font-trap)] text-[clamp(1.5rem,3.8vw,3.25rem)] font-extrabold leading-[1.2] text-[var(--color-gold)] transition-opacity duration-[1500ms]">
         
       </h1>
 
-      <h2 className="mb-10 font-[family-name:var(--font-trap)] text-[clamp(2.8rem,5.5vw,4.5rem)] font-extrabold leading-[1.15] text-[var(--color-gold)]">
+      <h2 className="mb-10 font-[family-name:var(--font-trap)] text-[clamp(2rem,5.5vw,4.5rem)] font-extrabold leading-[1.15] text-[var(--color-gold)]">
         Quantum Computing: Shaping the Future of Technology and Engineering by
         2030
         <br />
