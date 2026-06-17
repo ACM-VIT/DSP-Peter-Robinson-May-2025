@@ -21,17 +21,17 @@ export default function SpeakerSection() {
 
           <div className="flex flex-col text-left">
             
-            <p className="mb-3 text-[0.95rem] leading-[1.6] tracking-[0.01em] text-white/85 md:text-[1.05rem]">
+            <p className="mb-3 text-[1.05rem] leading-[1.6] tracking-[0.01em] text-white/85 md:text-[1.15rem]">
               Joining us for this session is an industry expert from Qangles,
               a pioneering company dedicated to bringing quantum computing
               out of the lab and into real-world enterprise applications.
             </p>
-            <p className="mb-3 text-[0.95rem] leading-[1.6] tracking-[0.01em] text-white/85 md:text-[1.05rem]">
+            <p className="mb-3 text-[1.05rem] leading-[1.6] tracking-[0.01em] text-white/85 md:text-[1.15rem]">
               Qangles specializes in harmonizing classical and quantum computation,
               providing a unified platform where developers, scientists, and enterprises
               can build, test, and deploy hybrid quantum solutions.
             </p>
-            <p className="text-[0.95rem] leading-[1.6] tracking-[0.01em] text-white/85 md:text-[1.05rem]">
+            <p className="text-[1.05rem] leading-[1.6] tracking-[0.01em] text-white/85 md:text-[1.15rem]">
               Qangles integrates simulation, execution, and optimization workflows to solve bottlenecks,
               bridging traditional and quantum infrastructure turns
               complex barriers into actionable breakthroughs.

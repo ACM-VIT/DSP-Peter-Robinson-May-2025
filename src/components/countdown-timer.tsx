@@ -38,7 +38,7 @@ function isExpired(t: TimeLeft): boolean {
 function TimerDigitCard({ value }: { value: string }) {
   return (
     <div className="timer-digit-card">
-      <span className="font-[family-name:var(--font-aldrich)] tabular-nums text-[2.75rem] sm:text-[3.5rem] text-white leading-none tracking-wider">
+      <span className="font-[family-name:var(--font-aldrich)] tabular-nums text-[2.25rem] sm:text-[3.5rem] text-white leading-none tracking-wider">
         {value.slice(0, 2)}
       </span>
     </div>
@@ -47,7 +47,7 @@ function TimerDigitCard({ value }: { value: string }) {
 
 function TimerSeparator() {
   return (
-    <span className="font-[family-name:var(--font-aldrich)] text-[2.25rem] sm:text-[3rem] text-white/40 leading-none pb-[0.1em]">
+    <span className="font-[family-name:var(--font-aldrich)] text-[1.75rem] sm:text-[3rem] text-white/40 leading-none pb-[0.1em]">
       :
     </span>
   );

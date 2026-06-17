@@ -14,7 +14,7 @@ export default function HeroSection({
   const [isLive, setIsLive] = useState(alreadyExpired);
 
   return (
-    <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-8 pt-28 pb-16 text-center">
+    <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 md:px-8 pt-28 pb-16 text-center">
       <h1 className="mx-auto mb-6 max-w-[1100px] font-[family-name:var(--font-trap)] text-[clamp(1.5rem,3.8vw,3.25rem)] font-extrabold leading-[1.2] text-[var(--color-gold)] transition-opacity duration-[1500ms]">
         
       </h1>
@@ -55,7 +55,7 @@ export default function HeroSection({
         onExpire={() => setIsLive(true)}
       />
 
-      <p className="mt-14 max-w-[750px] text-[1.05rem] font-light leading-[1.7] tracking-[0.01em] text-white/60">
+      <p className="mt-14 max-w-[750px] text-[1.05rem] md:text-[1.15rem] font-light leading-[1.7] tracking-[0.01em] text-white/60">
         Dive into the fundamentals of quantum computing with hands-on sessions,
         expert talks, and collaborative problem solving - brought to you by ACM
         VIT Student Chapter.

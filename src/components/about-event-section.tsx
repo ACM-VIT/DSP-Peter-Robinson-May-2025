@@ -13,7 +13,7 @@ export default function AboutEventSection() {
           About the Event
         </h2>
 
-        <div className="mx-auto max-w-[900px] space-y-2 text-[0.85rem] leading-[1.5] tracking-[0.01em] text-white/85 md:space-y-4 md:text-[1.05rem] md:leading-[1.6]">
+        <div className="mx-auto max-w-[900px] space-y-4 text-[1.05rem] leading-[1.5] tracking-[0.01em] text-white/85 md:text-[1.15rem] md:leading-[1.6]">
           {paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
