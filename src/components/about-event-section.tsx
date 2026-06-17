@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ShaderGradient from "./shader-gradient";
+import Navbar from "./navbar";
 
 const paragraphs = [
   "Join us for an interactive, engaging session on the emerging topic of Quantum Computing. This event caters to absolute beginners as well as those familiar with basic terminology.",
@@ -13,8 +14,7 @@ const tiles = ["Quantum basics", "Modern ecosystem", "Career roadmap"];
 export default function AboutEventSection() {
   return (
     <section
-      id="event"
-      className="relative isolate min-h-screen overflow-hidden bg-black px-6 py-20 font-[family-name:var(--font-trap)] text-white md:px-12 lg:px-20"
+      className="relative isolate min-h-screen overflow-x-hidden overflow-y-auto bg-black font-[family-name:var(--font-trap)] text-white no-scrollbar"
     >
       <ShaderGradient />
       <div className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(115deg,rgba(0,0,0,0.94)_0%,rgba(0,0,0,0.82)_34%,rgba(24,24,24,0.68)_58%,rgba(112,112,112,0.34)_100%)]" />
@@ -47,8 +47,11 @@ export default function AboutEventSection() {
 
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-1/3 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.08),transparent_62%)] opacity-50" />
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-10rem)] w-full max-w-5xl flex-col justify-center">
-        <h2 className="mb-10 text-center text-[1.9rem] font-semibold leading-tight text-[var(--color-gold)] md:mb-12 md:text-[2.25rem]">
+      <div className="relative z-10 flex h-full w-full flex-col pb-8">
+        <Navbar />
+
+        <div className="mx-auto flex min-h-[calc(100vh-8rem)] w-full max-w-5xl flex-col justify-center px-6 pb-20 pt-4 md:px-12 lg:px-20">
+          <h2 className="mb-10 text-center text-[1.9rem] font-semibold leading-tight text-[var(--color-gold)] md:mb-12 md:text-[2.25rem]">
           About the Event
         </h2>
 
@@ -68,6 +71,7 @@ export default function AboutEventSection() {
               <span className="sr-only">{tile}</span>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>

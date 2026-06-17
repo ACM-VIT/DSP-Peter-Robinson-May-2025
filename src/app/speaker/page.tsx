@@ -1,6 +1,4 @@
-import ShaderGradient from "@/components/shader-gradient";
-import Navbar from "@/components/navbar";
-import Image from "next/image";
+import SpeakerSection from "@/components/speaker-section";
 
 export default function Speaker() {
   return (

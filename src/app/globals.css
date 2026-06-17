@@ -31,12 +31,19 @@
   --foreground: #ededed;
 }
 
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-trap);
   margin: 0;
   padding: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
 /* Glassmorphism timer card */
