@@ -34,16 +34,16 @@ export default function SpeakerSection() {
 
       <div className="relative z-10 flex h-full w-full flex-col">
         <Navbar />
-        <main className="flex flex-1 flex-col items-center justify-center px-8 pb-28 -mt-8 md:pb-36 md:-mt-12">
-          <h1 className="relative -top-4 mb-10 text-center font-[family-name:var(--font-trap)] text-[clamp(2.2rem,5vw,3rem)] font-bold text-[var(--color-gold)] md:-top-6">
+        <main className="flex flex-1 flex-col items-center justify-center px-8 pb-20 pt-4 md:pb-24">
+          <h1 className="mb-10 text-center font-[family-name:var(--font-trap)] text-[clamp(2.2rem,5vw,3rem)] font-bold text-[var(--color-gold)]">
             About the Speaker
           </h1>
 
           <div className="flex w-full max-w-3xl flex-col items-center gap-10 md:flex-row md:items-start md:gap-14">
-            <div className="relative -top-4 h-[110px] w-[110px] flex-shrink-0 md:-top-6 md:h-[100px] md:w-[100px]">
+            <div className="h-[110px] w-[110px] flex-shrink-0 md:h-[100px] md:w-[100px] relative">
               <Image
                 src="/images/speaker-logo-removebg-preview.png"
-                alt="Dr. Something something"
+                alt="Qangles Logo"
                 fill
                 priority
                 className="object-contain"
@@ -52,20 +52,22 @@ export default function SpeakerSection() {
 
             <div className="flex flex-col text-left">
               <h2 className="mb-5 font-[family-name:var(--font-trap)] text-2xl font-bold text-white md:text-3xl">
-                Dr. Something something
+                Qangles
               </h2>
               <p className="mb-4 text-[0.95rem] leading-relaxed text-white/70">
-                Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                vulputate libero et velit interdum, ac aliquet odio mattis.
+                Joining us for this session is an industry expert from Qangles,
+                a pioneering company dedicated to bringing quantum computing 
+                out of the lab and into real-world enterprise applications. 
               </p>
               <p className="mb-4 text-[0.95rem] leading-relaxed text-white/70">
-                Class aptent taciti sociosqu ad litora torquent per conubia
-                nostra, per inceptos himenaeos.
+                Qangles specializes in harmonizing classical and quantum computation, 
+                providing a unified platform where developers, scientists, and enterprises 
+                can build, test, and deploy hybrid quantum solutions.
               </p>
               <p className="text-[0.95rem] leading-relaxed text-white/70">
-                Curabitur tempus urna at turpis condimentum lobortis. Ut
-                commodo efficitur neque. Ut diam quam, semper iaculis
-                condimentum ac, vestibulum eu nisl
+                Qangles integrates simulation, execution, and optimization workflows to solve bottlenecks, 
+                bridging traditional and quantum infrastructure turns
+                complex barriers into actionable breakthroughs.
               </p>
             </div>
           </div>
