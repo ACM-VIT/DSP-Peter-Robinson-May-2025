@@ -137,20 +137,23 @@ export default function CountdownTimer({
   meetUrl: string;
   onExpire?: () => void;
 }) {
-  const initialExpired = targetDate.getTime() <= Date.now();
-
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(() => getTimeLeft(targetDate));
-  const [mounted, setMounted] = useState(initialExpired);
-  const [expired, setExpired] = useState(initialExpired);
-  const [alreadyExpired] = useState(initialExpired);
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [mounted, setMounted] = useState(false);
+  const [expired, setExpired] = useState(false);
+  const [alreadyExpired, setAlreadyExpired] = useState(false);
 
   useEffect(() => {
-    if (initialExpired) {
+    setMounted(true);
+    
+    const isNowExpired = targetDate.getTime() <= Date.now();
+    if (isNowExpired) {
+      setAlreadyExpired(true);
+      setExpired(true);
       onExpire?.();
       return;
     }
 
-    setMounted(true);
+    setTimeLeft(getTimeLeft(targetDate));
 
     const interval = setInterval(() => {
       const t = getTimeLeft(targetDate);
@@ -164,19 +167,24 @@ export default function CountdownTimer({
     }, 1000);
 
     return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [targetDate]);
 
   if (!mounted) {
     return (
-      <div className="timer-container">
-        <div className="flex items-center gap-1 sm:gap-3">
-          <TimerDigitCard value="--" />
-          <TimerSeparator />
-          <TimerDigitCard value="--" />
-          <TimerSeparator />
-          <TimerDigitCard value="--" />
-          <TimerSeparator />
-          <TimerDigitCard value="--" />
+      <div className="grid" style={{ gridTemplate: '1fr / 1fr' }}>
+        <div className="col-start-1 row-start-1 flex items-center justify-center opacity-100">
+          <div className="timer-container">
+            <div className="flex items-center gap-1 sm:gap-3">
+              <TimerDigitCard value="--" />
+              <TimerSeparator />
+              <TimerDigitCard value="--" />
+              <TimerSeparator />
+              <TimerDigitCard value="--" />
+              <TimerSeparator />
+              <TimerDigitCard value="--" />
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -215,7 +223,7 @@ export default function CountdownTimer({
           expired ? "animate-fade-in-up" : "opacity-0 pointer-events-none"
         }`}
       >
-        <MeetLink meetUrl={meetUrl} skipAnimation />
+        <MeetLink meetUrl={meetUrl} skipAnimation={false} />
       </div>
     </div>
   );
