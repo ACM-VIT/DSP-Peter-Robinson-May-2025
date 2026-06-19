@@ -45,6 +45,16 @@ export default function Footer() {
                   Speaker Profile
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="https://qangles.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-white transition-colors"
+                >
+                  Qangles
+                </Link>
+              </li>
             </ul>
           </div>
           <div>

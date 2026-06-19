@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CountdownTimer from "./countdown-timer";
 
 export default function HeroSection({
@@ -10,8 +10,17 @@ export default function HeroSection({
   targetDate: Date;
   meetUrl: string;
 }) {
-  const alreadyExpired = targetDate.getTime() <= Date.now();
-  const [isLive, setIsLive] = useState(alreadyExpired);
+  const [isLive, setIsLive] = useState(false);
+  const [alreadyLive, setAlreadyLive] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    if (targetDate.getTime() <= Date.now()) {
+      setIsLive(true);
+      setAlreadyLive(true);
+    }
+  }, [targetDate]);
 
   return (
     <main className="relative z-10 flex flex-1 flex-col items-center justify-center px-4 md:px-8 pt-28 pb-16 text-center">
@@ -23,10 +32,15 @@ export default function HeroSection({
         Quantum Computing: Shaping the Future of Technology and Engineering by
         2030
         <br />
-        {alreadyExpired ? (
+        {!mounted ? (
+          <span className="relative inline-grid grid-cols-1 grid-rows-1 justify-items-center py-1">
+            <span className="col-start-1 row-start-1 opacity-100">starts in</span>
+            <span className="pointer-events-none col-start-1 row-start-1 opacity-0">is now live at</span>
+          </span>
+        ) : alreadyLive ? (
           <span>is now live at</span>
         ) : (
-          <span className="relative inline-grid grid-cols-1 grid-rows-1 justify-items-center overflow-hidden py-1">
+          <span className="relative inline-grid grid-cols-1 grid-rows-1 justify-items-center py-1">
             <span
               className={
                 isLive
